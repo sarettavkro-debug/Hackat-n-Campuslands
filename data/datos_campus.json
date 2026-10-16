@@ -1,0 +1,60 @@
+{
+  "espacios": [
+    {
+      "id": "ESP-001",
+      "nombre": "Auditorio",
+      "capacidad": 100,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-002",
+      "nombre": "Cosmos",
+      "capacidad": 25,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-003",
+      "nombre": "Skilab",
+      "capacidad": 20,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-004",
+      "nombre": "Spooki",
+      "capacidad": 38,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-005",
+      "nombre": "Apolo",
+      "capacidad": 34,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-006",
+      "nombre": "Blanca",
+      "capacidad": 12,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-007",
+      "nombre": "Azul",
+      "capacidad": 10,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-008",
+      "nombre": "Amarillas verdes",
+      "capacidad": 6,
+      "estado": "disponible"
+    },
+    {
+      "id": "ESP-009",
+      "nombre": "Artemis",
+      "capacidad": 32,
+      "estado": "disponible"
+    }
+  ],
+  "recursos": [],
+  "incidencias": []
+}
