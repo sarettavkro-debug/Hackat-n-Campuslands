@@ -64,3 +64,7 @@ def guardar_datos(datos):
         if ruta_temporal.exists():
             ruta_temporal.unlink()
 
+def listar_espacios():
+    
+    datos = cargar_datos
+    return datos["espacios"]
