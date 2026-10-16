@@ -35,3 +35,32 @@ def cargar_datos():
             )
 
     return datos
+
+def guardar_datos(datos):
+    
+    if not isinstance(datos, dict):
+        raise ValueError("Los datos deben estar en un diccionario")
+
+    for seccion in ("espacios", "recursos", "incidencias"):
+        if not isinstance(datos.get(seccion), list):
+            raise ValueError(
+                f"La sección '{seccion}' debe ser una lista."
+            )
+
+    ruta_temporal = RUTA_DATOS.with_suffix(".tmp")
+
+    try:
+        with open(ruta_temporal, "w", encoding="utf-8") as archivo:
+            json.dump(
+                datos,
+                archivo,
+                ensure_ascii=False,
+                indent=4
+            )
+
+        ruta_temporal.replace(datos)
+
+    finally:
+        if ruta_temporal.exists():
+            ruta_temporal.unlink()
+
