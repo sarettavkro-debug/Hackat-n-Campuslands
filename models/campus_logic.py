@@ -76,3 +76,34 @@ def buscar_espacio(id_espacio):
             return espacio
 
     return None
+
+def validar_capacidad(id_espacio, cantidad_personas):
+
+    if (
+        isinstance(cantidad_personas, bool)
+        or not isinstance(cantidad_personas, int)
+        or cantidad_personas <= 0
+    ):
+        return False, "La cantidad de personas debe ser un entero positivo."
+
+    espacio = buscar_espacio(id_espacio)
+
+    if espacio is None:
+        return False, "El espacio no existe."
+
+    capacidad = espacio.get("capacidad")
+
+    if (
+        isinstance(capacidad, bool)
+        or not isinstance(capacidad, int)
+        or capacidad <= 0
+    ):
+        return False, "El espacio tiene una capacidad inválida."
+
+    if cantidad_personas > capacidad:
+        return (
+            False,
+            f"El espacio admite máximo {capacidad} personas."
+        )
+
+    return True, "La capacidad es suficiente."
