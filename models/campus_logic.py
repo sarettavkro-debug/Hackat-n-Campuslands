@@ -107,3 +107,15 @@ def validar_capacidad(id_espacio, cantidad_personas):
         )
 
     return True, "La capacidad es suficiente."
+
+def validar_disponibilidad_espacio(id_espacio):
+
+    espacio = buscar_espacio(id_espacio)
+
+    if espacio is None:
+        return False, "El espacio no existe."
+
+    if espacio.get("estado") != "disponible":
+        return False, "El espacio no está disponible."
+
+    return True, "El espacio está disponible."
