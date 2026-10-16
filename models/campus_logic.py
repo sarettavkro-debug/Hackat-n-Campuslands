@@ -136,3 +136,24 @@ def validar_recurso_para_prestamo(id_recurso):
             return True, "El recurso puede prestarse."
 
     return False, "El recurso no existe."
+
+def actualizar_estado_espacio(id_espacio, nuevo_estado):
+
+    estados_validos = {
+        "disponible",
+        "ocupado",
+        "inhabilitado"
+    }
+
+    if nuevo_estado not in estados_validos:
+        raise ValueError("El estado indicado no es válido.")
+
+    datos = cargar_datos()
+
+    for espacio in datos["espacios"]:
+        if espacio.get("id") == id_espacio:
+            espacio["estado"] = nuevo_estado
+            guardar_datos(datos)
+            return True
+
+    return False
