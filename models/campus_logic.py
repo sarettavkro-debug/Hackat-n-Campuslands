@@ -119,3 +119,20 @@ def validar_disponibilidad_espacio(id_espacio):
         return False, "El espacio no está disponible."
 
     return True, "El espacio está disponible."
+
+def validar_recurso_para_prestamo(id_recurso):
+
+    datos = cargar_datos()
+
+    for recurso in datos["recursos"]:
+        if recurso.get("id") == id_recurso:
+
+            if recurso.get("estado") != "operativo":
+                return False, "El recurso no está operativo."
+
+            if recurso.get("disponibilidad") != "disponible":
+                return False, "El recurso ya está prestado o no disponible."
+
+            return True, "El recurso puede prestarse."
+
+    return False, "El recurso no existe."
