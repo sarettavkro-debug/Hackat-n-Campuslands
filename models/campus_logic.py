@@ -66,7 +66,7 @@ def guardar_datos(datos):
 
 def listar_espacios():
     
-    datos = cargar_datos
+    datos = cargar_datos()
     return datos["espacios"]
 
 def buscar_espacio(id_espacio):
